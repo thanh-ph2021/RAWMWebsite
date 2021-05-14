@@ -29,21 +29,20 @@ public class UserServiceImpl implements UserService{
 
     @Autowired
     private UserRepository userRepository;
-    @Autowired
-    private BCryptPasswordEncoder bCryptPasswordEncoder;
 
     @Override
-    @Transactional
-    public void addUser(User user) {
-        user.setPass(
-                bCryptPasswordEncoder.encode(user.getPass()));
-        userRepository.addUser(user);
+    public boolean addUser(User user) {
+        return userRepository.addUser(user);
     }
 
     @Override
-    @Transactional(readOnly = true)
     public User getUserByUsername(String username) {
-        return userRepository.getUsers(username).get(0);
+        return userRepository.getUserByUsername(username);
+    }
+
+    @Override
+    public List<User> getUsers() {
+        return userRepository.getUsers();
     }
 
 

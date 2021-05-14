@@ -4,8 +4,11 @@
     Author     : ASUS
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 
+<c:url value="/sign-up" var="action"/>
 <section class="ftco-section">
     <div class="container">
         <div class="row justify-content-center">
@@ -24,24 +27,34 @@
                             </div>
                             
                         </div>
-                        <form action="#" class="">
+                        <form:form action="${action}" class="" method="post" modelAttribute="user">
+                            <form:errors path="*" element="div" 
+                                         cssClass="alert alert-danger" />
+                            <c:if test="${errorMsg != null}">
+                                <div class="alert alert-danger">${errorMsg}</div>
+                            </c:if>
+
+                            <div class="form-group mb-3">
+                                <label class="label" for="phone">Phone</label>
+                                <form:input type="text" class="form-control myform" placeholder="Phone" required="required" path="phone"/>
+                            </div>
                             <div class="form-group mb-3">
                                 <label class="label" for="name">Username</label>
-                                <input type="text" class="form-control myform" placeholder="Username" required>
+                                <form:input type="text" class="form-control myform" placeholder="Username" required="required" path="userName"/>
                             </div>
                             <div class="form-group mb-3">
                                 <label class="label" for="password">Password</label>
-                                <input type="password" class="form-control myform" placeholder="Password" required>
+                                <form:input type="password" class="form-control myform" placeholder="Password" required="required" path="pass"/>
                             </div>
                             <div class="form-group mb-3">
                                 <label class="label" for="password">Confirm Password</label>
-                                <input type="password" class="form-control myform" placeholder="Confirm Password" required>
+                                <form:input type="password" class="form-control myform" placeholder="Confirm Password" required="required" path="confirmPassword"/>
                             </div>
                             <div class="form-group">
                                 <button type="submit" class="form-control btn btn-primary submit px-3">Sign up</button>
                             </div>
                             
-                        </form>
+                        </form:form>
                     </div>
                 </div>
             </div>

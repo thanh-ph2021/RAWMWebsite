@@ -37,7 +37,7 @@
                             <ul>
                                 <c:forEach items="${services}" var="s">
                                     <li><a href="#">${s.name}</a></li>
-                                </c:forEach>
+                                    </c:forEach>
                             </ul>
                         </li>
                         <li class="scroll-to-section"><a href="#chefs">Menu</a></li> 
@@ -46,12 +46,27 @@
                             <ul>
                                 <c:forEach items="${halls}" var="h">
                                     <li><a href="#">${h.name}</a></li>
-                                </c:forEach>
-                                
+                                    </c:forEach>
+
                             </ul>
                         </li>
                         <!-- <li class=""><a rel="sponsored" href="https://templatemo.com" target="_blank">External URL</a></li> -->
-                        <li class="scroll-to-section" style="background: #b5b5b3; padding: 0 15px; border-radius: 5px"><a href="#reservation">Contact Us</a></li> 
+                        <li class="scroll-to-section" style="background: #b5b5b3; padding: 0 15px; border-radius: 5px"><a href="#reservation">Contact Us</a></li>
+<!--                        <li class="submenu">
+                            <a href="javascript:;">User  <i class="fas fa-user"></i></a>
+                            <ul>
+                                <li><a href="#"><i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                        Profile</a></li>
+                                <li>
+
+                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                        <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                        Logout
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>-->
                     </ul>        
                     <a class='menu-trigger'>
                         <span>Menu</span>

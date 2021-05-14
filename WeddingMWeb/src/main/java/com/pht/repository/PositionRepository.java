@@ -5,16 +5,13 @@
  */
 package com.pht.repository;
 
-import com.pht.pojo.User;
+import com.pht.pojo.Position;
 import java.util.List;
 
 /**
  *
  * @author ASUS
  */
-public interface UserRepository {
-
-    boolean addUser(User user);
-    List<User> getUsers();
-    User getUserByUsername(String username);
+public interface PositionRepository {
+    List<Position> getPositions();
 }

@@ -3,18 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.pht.repository;
+package com.pht.service;
 
-import com.pht.pojo.User;
+import com.pht.pojo.Position;
 import java.util.List;
 
 /**
  *
  * @author ASUS
  */
-public interface UserRepository {
-
-    boolean addUser(User user);
-    List<User> getUsers();
-    User getUserByUsername(String username);
+public interface PositionService {
+    List<Position> getPositions();
 }

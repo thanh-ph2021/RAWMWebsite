@@ -5,16 +5,16 @@
  */
 package com.pht.repository;
 
-import com.pht.pojo.User;
+import com.pht.pojo.Staff;
 import java.util.List;
 
 /**
  *
  * @author ASUS
  */
-public interface UserRepository {
-
-    boolean addUser(User user);
-    List<User> getUsers();
-    User getUserByUsername(String username);
+public interface StaffRepository {
+    List<Staff> getStaffs(String kw);
+    boolean addOrUpdateStaff(Staff s);
+    Staff getStaffById(int staffId);
+    boolean deleteStaff(int staffId);
 }

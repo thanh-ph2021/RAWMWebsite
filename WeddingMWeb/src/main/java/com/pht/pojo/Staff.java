@@ -7,11 +7,15 @@ package com.pht.pojo;
 
 import java.io.Serializable;
 import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import org.springframework.format.annotation.DateTimeFormat;
 
 /**
  *
@@ -19,17 +23,22 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "staff")
-public class Staff implements Serializable{
+public class Staff implements Serializable {
+
     @Id
     private int id;
     private String name;
     private String sex;
+    @Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date birthday;
     private String phone;
     private String email;
     private String address;
     @ManyToOne
+    @JoinColumn(name = "position")
     private Position position;
+
 
     public int getId() {
         return id;
@@ -94,5 +103,5 @@ public class Staff implements Serializable{
     public void setPosition(Position position) {
         this.position = position;
     }
-    
+
 }

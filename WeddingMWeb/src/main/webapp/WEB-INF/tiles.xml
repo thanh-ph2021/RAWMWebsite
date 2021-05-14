@@ -29,4 +29,22 @@
         <put-attribute name="title" value="Sign up" />
         <put-attribute name="content" value="/WEB-INF/jsp/menu.jsp" />
     </definition>
+    <definition name="adminLayout" template="/WEB-INF/layout/base-admin.jsp">
+        <put-attribute name="title" value="" />
+        <put-attribute name="topbar" value="/WEB-INF/layout/topbar.jsp" />
+        <put-attribute name="content" value="" />
+        <put-attribute name="sidebar" value="/WEB-INF/layout/sidebar.jsp" />
+    </definition>
+    <definition name="admin" extends="adminLayout">
+        <put-attribute name="title" value="Admin" />
+        <put-attribute name="content" value="/WEB-INF/jsp/admin.jsp" />
+    </definition>
+    <definition name="staff" extends="adminLayout">
+        <put-attribute name="title" value="Staff" />
+        <put-attribute name="content" value="/WEB-INF/jsp/staff.jsp" />
+    </definition>
+    <definition name="addOrEdit" extends="adminLayout">
+        <put-attribute name="title" value="" />
+        <put-attribute name="content" value="/WEB-INF/jsp/staff/add-or-edit.jsp" />
+    </definition>
 </tiles-definitions>

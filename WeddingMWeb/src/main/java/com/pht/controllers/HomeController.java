@@ -6,6 +6,7 @@
 package com.pht.controllers;
 
 import com.pht.service.HallService;
+import com.pht.service.PositionService;
 import com.pht.service.ServiceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -26,11 +27,11 @@ public class HomeController {
     private HallService hallService;
     @Autowired
     private ServiceService serviceService;
-    
     @ModelAttribute
     public void addAttributes(Model model) {
         model.addAttribute("halls", this.hallService.getHalls());
         model.addAttribute("services", this.serviceService.getServices());
+        
         
     }
             

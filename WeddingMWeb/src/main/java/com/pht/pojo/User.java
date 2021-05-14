@@ -19,18 +19,30 @@ import javax.validation.constraints.Size;
  */
 @Entity
 @Table(name = "user")
-public class User implements Serializable{
+public class User implements Serializable {
+
     @Id
     private int id;
-    @Size(min=5, max=15, message="{product.username.sizeMsg}")
+//    @Size(min = 5, max = 15, message = "{user.username.sizeMsg}")
     private String userName;
     @NotEmpty(message = "{user.password.sizeMsg}")
     private String pass;
     private String name;
     private String phone;
     private String email;
+    @Transient
+    private String confirmPassword;
     //phân quyền ROLE_ADMIN, ROLE_USER
     private String role;
+
+    public String getConfirmPassword() {
+        return confirmPassword;
+    }
+
+    public void setConfirmPassword(String confirmPassword) {
+        this.confirmPassword = confirmPassword;
+    }
+
     
     public int getId() {
         return id;
@@ -64,7 +76,7 @@ public class User implements Serializable{
         this.role = role;
     }
 
-     public String getUserName() {
+    public String getUserName() {
         return userName;
     }
 
@@ -88,5 +100,4 @@ public class User implements Serializable{
         this.email = email;
     }
 
-    
 }
